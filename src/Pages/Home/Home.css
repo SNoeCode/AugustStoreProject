@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f2b85e;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.home-page {
+  background-image: url("../../../Images/wp7001122.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 45px;
+  width: 100vw;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  background-clip: fixed;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #e3a92f;
+  font-family: "Montez", cursive;
+}
+
+.banner p {
+  font-size: 28px;
+  font-family: "Montez", cursive;
+  color: #cd74a0;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  gap: 10px;
+}
+
+.card {
+  height: 350px;
+  width: 250px;
+  align-items: center;
+  /* padding: 10px; */
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 10px;
+  text-align: center;
+}
+.card h1 {
+  text-align: center;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #171830;
+  color: white;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.more-details-button:hover {
+  background-color: #333;
+}
+
+.rating-container {
+  margin-bottom: 10px;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-bottom: 80px;
+  width: 100%;
+  background-color: #171830;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 90px;
+}
+.fas fa-cart-plus {
+  color: black;
+}
