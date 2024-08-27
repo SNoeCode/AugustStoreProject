@@ -1,0 +1,268 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 80px;
+  flex-direction: column;
+  background-color: #181932;
+  color: white;
+  padding: 10px;
+}
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.fa-cart-shopping {
+  color: #cd74a0;
+  display: flex;
+  margin-left: 150px;
+  justify-content: space-between;
+}
+.fa-house-chimney {
+  color: #e3a92f;
+  margin-left: -125px;
+  position: relative;
+}
+i:hover {
+  cursor: pointer;
+  color: #7f072f;
+}
+.cart-icon {
+  color: white;
+}
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: white;
+}
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+
+  margin: 0;
+}
+.navbar-links li {
+  /* margin: 0 10px; */
+  margin-right: 50px;
+  font-size: 11px;
+
+  width: 85px;
+}
+/* 
+  .navbar-links button {
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+  } */
+
+li {
+  list-style: none;
+  font-size: 11px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 85px;
+}
+.login-btn {
+  font-size: 11px;
+  width: 70px;
+  height: 25px;
+  margin-left: 115px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+.category-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  /* margin-left: 20px; */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  height: 40px;
+}
+.category-dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+
+  margin-top: 50px;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  color: black;
+  padding: 12px 16px;
+  text-align: left;
+
+  cursor: pointer;
+  width: 50%;
+}
+
+.dropdown-content button:hover {
+  background-color: #e6562d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-auto {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  position: relative;
+  display: inline-flex;
+}
+
+.search-auto input {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  font-size: 11;
+  border: 1px solid #7e7d7d;
+  border-radius: 4px;
+  /* width: 80%; */
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-btn li {
+  width: 5px;
+  height: 45px;
+}
+.search-auto button {
+  height: 30px;
+  margin-right: -25px;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 29px;
+  border: 1px white solid;
+
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.search-auto button {
+  display: flex;
+  height: 40px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.search-auto input {
+  display: flex;
+  height: 40px;
+  margin-left: 40px auto;
+  margin-right: 40px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.search-form button:hover {
+  background-color: #666;
+}
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestions-dropdown li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #f1f1f1;
+}
+
+.suggestion-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.suggestions-dropdown span {
+  font-size: 0.9em;
+  color: #333;
+}
+.contact-btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sign-up-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+.login-btn {
+  height: 40px;
+}
