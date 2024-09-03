@@ -1,135 +1,191 @@
 import React from "react";
-import "./ContactUs.css";
-const ContactUs = () => {
+import "./Home.css";
+import { getProducts } from "../../config/api";
+import Footer from "../../Components/Footer/Footer";
+import { useState, useEffect } from "react";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { useNavigate, useParams } from "react-router-dom";
+import CategoriesPage from "../CategoriesPage/CategoriesPage";
+
+// const Home = () => {
+//   const navigate = useNavigate();
+//   const [products, setProducts] = useState([]);
+
+//   const navigateToNewPage = (id) => {
+//     navigate(`/product-detail/${id}`);
+//   };
+
+//   useEffect(() => {
+//     getProducts().then((res) => {
+//       setProducts(res.data);
+//     });
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="home-page">
+//         <div className="banner">
+//           <h1>Welcome to Our Online Store</h1>
+//           <p>Find the best products here</p>
+//         </div>
+//       </div>
+
+//       <div className="container">
+//         {products.map((item) => (
+//           <div
+//             key={item.id}
+//             className="card"
+//             onClick={() => {
+//               navigateToNewPage(item.id);
+//             }}
+//           >
+//             <h1>{item.title}</h1>
+//             <img src={item.image} alt={item.title} className="img" />
+//             <h2>Price: ${item.price}</h2>
+//             <div className="rating-container">
+//               <Box sx={{ "& > legend": { mt: 2 } }}>
+//                 <Typography component="legend">Product Rating</Typography>
+//                 <Rating
+//                   name="read-only"
+//                   value={item.rating.rate}
+//                   size="small"
+//                   readOnly
+//                 />
+//               </Box>
+//             </div>
+
+//             <button className="more-details-button">More Details</button>
+//           </div>
+//         ))}
+//       </div>
+//       {/* </div> */}
+//       {/* </div> */}
+
+//       {/* <Footer /> */}
+//     </>
+//   );
+// };
+
+// export default Home;
+
+// const Home = () => {
+//   const navigate = useNavigate();
+//   const [products, setProducts] = useState([]);
+
+//   const navigateToNewPage = (id) => {
+//     navigate(`/product-detail/${id}`);
+//   };
+
+//   useEffect(() => {
+//     getProducts().then((res) => {
+//       setProducts(res.data);
+//     });
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="home-page">
+//         <div className="banner">
+//           <h1>Welcome to Our Online Store</h1>
+//           <p>Find the best products here</p>
+//         </div>
+//       </div>
+
+//       <div className="container">
+//         {products.map((item) => (
+//           <div
+//             key={item.id}
+//             className="card"
+//             onClick={() => {
+//               navigateToNewPage(item.id);
+//             }}
+//           >
+//             <h1>{item.title}</h1>
+//             <img src={item.image} alt={item.title} className="img" />
+//             <h2>Price: ${item.price}</h2>
+//             <div className="rating-container">
+//               <Box sx={{ "& > legend": { mt: 2 } }}>
+//                 <Typography component="legend">Product Rating</Typography>
+//                 <Rating
+//                   name="read-only"
+//                   value={item.rating.rate}
+//                   size="small"
+//                   readOnly
+//                 />
+//               </Box>
+//             </div>
+
+//             <button className="more-details-button">More Details</button>
+//           </div>
+//         ))}
+//       </div>
+//       {/* </div> */}
+//       {/* </div> */}
+
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Home;
+const Home = () => {
+  const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+
+  const navigateToNewPage = (id) => {
+    navigate(`/product-detail/${id}`);
+  };
+
+  useEffect(() => {
+    getProducts().then((res) => {
+      setProducts(res.data);
+    });
+  }, []);
+
   return (
     <>
-      <section className="content-container">
-        <div className="textArea">
-          <h2>Contact Us</h2>
-
-          <p>
-            WE DONT DO REFUNDS OR EXCHANGES!
-            <br />
-            But we would love to hear all you complaints!.
-            <br />
-            For any chatter,drop us an email!
-            <br />
-            However we suck at responding
-          </p>
-          <p>NO WARRANTY ON SHIT!</p>
+      <div className="home-page">
+        <div className="banner">
+          <h1>Welcome to Our Online Store</h1>
+          <p>Find the best products here</p>
         </div>
+      </div>
 
-        <div className="block">
-          <div className="row">
-            <div className="col-left">
-              <form id="contact" action="">
-                <h4>Leave us a message</h4>
-                <fieldset>
-                  <input
-                    placeholder="Your Name"
-                    type="text"
-                    tabIndex="1"
-                    required
-                    autoFocus
-                  />
-                </fieldset>
-                <fieldset>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    tabIndex="2"
-                    required
-                    autoFocus
-                  />
-                </fieldset>
-                <fieldset>
-                  <input
-                    placeholder="Your Email Address"
-                    type="email"
-                    tabIndex="3"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <input
-                    placeholder="Your Phone Number"
-                    type="tel"
-                    tabIndex="4"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <textarea
-                    placeholder="Type your Message Here...."
-                    tabIndex="5"
-                    required
-                  ></textarea>
-                </fieldset>
-                <fieldset>
-                  <button
-                    name="submit"
-                    type="submit"
-                    id="contact-submit"
-                    data-submit="...Sending"
-                  >
-                    Submit
-                  </button>
-                </fieldset>
-              </form>
+      <div className="container">
+        {products.map((item) => (
+          <div
+            key={item.id}
+            className="card"
+            onClick={() => {
+              navigateToNewPage(item.id);
+            }}
+          >
+            <h1>{item.title}</h1>
+            <img src={item.image} alt={item.title} className="img" />
+            <h2>
+              <b>Price: ${item.price}</b>
+            </h2>
+            <div className="rating-container">
+              <Box sx={{ "& > legend": { mt: 2 } }}>
+                <Typography component="legend">Product Rating</Typography>
+                <Rating
+                  name="read-only"
+                  value={item.rating.rate}
+                  size="small"
+                  readOnly
+                />
+              </Box>
             </div>
-            <div className="col-right">
-              <div id="details">
-                <h4>Drop by our Office</h4>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <i className="fa fa-map-marker fa- "></i>
-                      </td>
-                      <td>
-                        Reactions,
-                        <br />
-                        c/o React
-                        <br />
-                        YourMomma House,
-                        <br />
-                        69699,
-                        <br />
-                        Tennessee
-                        <p></p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i className="fa fa-phone fa- "></i>
-                      </td>
-                      <td>Phone No : 865-118-0608</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i className="fa fa-clock-o fa- "></i>
-                      </td>
-                      <td>
-                        Operation Time:
-                        <br />
-                        24 Hrs Live Baby <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i className="fa fa-envelope fa- "></i>
-                      </td>
-                      <td>Email : StillwituRmom@gmail.com</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <div class="container">
+              <div class="button button-1">More Details</div>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
     </>
   );
 };
 
-export default ContactUs;
+export default Home;

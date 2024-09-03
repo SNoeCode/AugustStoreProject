@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { getProducts, getCategories } from "../../config/api";
+import { getProducts, getCategories } from "../../config/api.js";
 import "./Navbar.css";
+import SearchBar from "../SearchBar/SearchBar.jsx";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [dropdown, setDropdown] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,19 +23,6 @@ const Navbar = () => {
     });
   }, []);
 
-  const handleSearchChange = (event) => {
-    const query = event.prevent.toLowerCase();
-    setSearchTerm(query);
-    if (query.length > 1) {
-      const filtered = products.filter((product) =>
-        product.title.toLowerCase().includes(query)
-      );
-      setFilteredProducts(filtered);
-      setDropdown(true);
-    } else {
-      setDropdown(false);
-    }
-  };
   const handleSearchClick = (id) => {
     navigate(`/product-detail/${id}`);
   };
@@ -45,14 +32,6 @@ const Navbar = () => {
   const handleNavigation = (path) => {
     navigate(path);
   };
-  //   if (searchTerm) {
-  //     navigate(`/product-search?query=${encodeURIComponent(searchTerm)}`);
-  //   }
-  // };
-
-  // const handleNavigation = (path) => {
-  //   navigate(path);
-  // };
 
   return (
     <>
@@ -66,7 +45,7 @@ const Navbar = () => {
               ></i>
             </li>
             <li className="dropdown">
-              <button className="dropbtn">Categories</button>
+              <button className="dropdown-btn">Categories</button>
               <div className="dropdown-content">
                 {categories.map((category) => (
                   <button
@@ -78,45 +57,32 @@ const Navbar = () => {
                 ))}
               </div>
             </li>
+
             <li>
-              <button
-                className="contact-btn"
-                onClick={() => handleNavigation("/contact-us")}
-              >
+              <button onClick={() => handleNavigation("/contact-us")}>
                 Contact Us
               </button>
             </li>
-
-            {/* <form className="search-form" onSubmit={handleSearch}> */}
-            <div className="search-auto">
-              <input
-                type="text"
-                onChange={handleSearchChange}
-                placeholder="Search products..."
-                value={searchTerm}
-                // onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              {dropdown && (
-                <ul className="suggestions-dropdown">
-                  {filtered.products.map((product) => (
-                    <li
-                      key={product.id}
-                      onClick={() => handleSearchClick(product.id)}
-                    >
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="suggestion-img"
-                      />{" "}
-                      <span>{product.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <li>
-                <button onClick={handleSearchSubmit}>Search</button>
-              </li>
+            <div className="searchbar-container">
+              <SearchBar />
+              <button>Search</button>
             </div>
+
+            <li>
+              <button
+                className="login-btn"
+                onClick={() => handleNavigation("/user-login")}
+              >
+                Login
+              </button>
+
+              <button
+                className="signup-btn"
+                onClick={() => handleNavigation("/sign-up")}
+              >
+                Sign Up
+              </button>
+            </li>
             <li
               className="shopping-cart"
               onClick={() => handleNavigation("/shopping-cart")}
@@ -128,28 +94,10 @@ const Navbar = () => {
                 <sup>{"3"}</sup>
               </i>
             </li>
-
-            <li>
-              <button
-                className="login-btn"
-                onClick={() => handleNavigation("/user-login")}
-              >
-                Login
-              </button>
-            </li>
-            <li>
-              <button
-                className="sign-up-btn"
-                onClick={() => handleNavigation("/sign-up")}
-              >
-                Sign Up
-              </button>
-            </li>
           </ul>
         </nav>
       </div>
     </>
   );
 };
-
 export default Navbar;

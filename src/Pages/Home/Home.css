@@ -43,20 +43,23 @@ body {
   color: #cd74a0;
 }
 .container {
+  background-color: transparent;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 20px;
 
-  gap: 10px;
+  gap: 5px;
 }
 
 .card {
   height: 350px;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 250px;
+  background-color: transparent;
   align-items: center;
-  /* padding: 10px; */
+  padding: 10px;
   display: flex;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -66,36 +69,37 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  margin-bottom: 15px;
+  height: 70px;
+  width: 150px;
+  object-fit: contain;
+  margin-top: 10px;
 }
-
+/* 
 .card h3 {
   font-size: 10px;
   text-align: center;
-}
+} */
 .card h1 {
+  margin-top: 10px;
   text-align: center;
   font-size: 12px;
   color: black;
-  font-weight: bold;
 }
 
 .card h2 {
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 14px;
+  /* margin: 10px 0; */
+  margin-bottom: 1px;
 }
 
-button {
+/* button {
   background-color: #171830;
   color: white;
   display: inline-block;
   border: none;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; 
   align-items: center;
   border-radius: 4px;
   font-size: 12px;
@@ -103,23 +107,28 @@ button {
 
 .more-details-button:hover {
   background-color: #333;
-}
 
+} */
+
+.button-1 {
+  background-color: transparent;
+  border: 3px solid #e73ee4;
+  /* border-radius: 50px; */
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #cd74a0;
+}
+.button-1:hover {
+  box-shadow: 0 0 10px 0 #fce276 inset, 0 0 20px 2px #fce276;
+  cursor: pointer;
+  border: 3px solid #fce276;
+}
 .rating-container {
-  margin-bottom: 10px;
+  text-align: center;
+
+  margin-bottom: -0px;
 }
 
-.footer {
-  margin-top: 60px;
-  padding-bottom: 80px;
-  width: 100%;
-  background-color: #171830;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  position: fixed;
-  bottom: 90px;
-}
 .fas fa-cart-plus {
   color: black;
 }

@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.add-to-cart-button {
+.category-add-to-cart-button {
   background-color: #333;
   color: white;
 
@@ -12,23 +12,22 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.buy-now-button span {
-  height: 30px;
-  /* display: flex; */
-  flex-direction: row;
+.category-buy-now-button span {
+  display: flex;
 }
-.buy-now-button:hover,
-.add-to-cart-button:hover {
+.category-buy-now-button:hover,
+.category-add-to-cart-button:hover {
   background-color: #555;
 }
-.card p {
+.category-card p {
   color: black;
   font: 18px;
 }
-.product-title h2 {
+.category-product-title h2 {
   color: black;
+  font-size: 15px;
 }
-.modal {
+.category-modal {
   position: fixed;
   height: auto;
   color: black;
@@ -37,65 +36,79 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-
+  padding: 0 10px;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
-.modal-content {
-  /* margin-top: 50px; */
+.category-modal-content {
+  margin-top: 100px;
   background-color: #fce276;
   border: 2px solid black;
   padding: 20px;
-
   border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
   height: 600px;
   text-align: center;
-
-  /* display: flex;
-    
-    flex-direction: column; */
 }
-.modal-content img {
-  width: 50%;
+.category-modal-content img {
   width: 200px;
-  height: 100px;
-  object-fit: cover;
+  height: 150px;
+  background: cover;
   color: black;
   margin-bottom: 15px;
+  margin-top: -30px;
 }
-. h2 {
-  font-size: 20px;
+.category-modal-title {
+  font-size: 14px;
+  font-weight: bold;
 }
-current-title-description h2 {
-  color: black;
-}
-.modal-description a {
-  width: 100%;
-  color: black;
-  font-size: 15px;
+.category-modal-description {
+  font-size: 13px;
   margin: 5px;
 }
-.product-list img {
+.category-read-more-link {
+  color: #007bff;
+  width: 100%;
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 5px;
+}
+.category-read-more-link:hover {
+  font-weight: bold;
+  font-size: 16px;
+}
+.category-read-less-link {
+  color: #007bff;
+  width: 100%;
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 5px;
+}
+.category-read-less-link:hover {
+  font-weight: bold;
+  font-size: 16px;
+}
+.category-description img {
   margin: 10px;
   width: 70%;
-  height: 75px;
+  height: 65px;
   margin-top: 20px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px 10px 0 0;
 }
 
-.product-list {
+.category-description {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 20px;
 }
 
-.card {
+.category-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,22 +125,23 @@ current-title-description h2 {
   min-width: 250px;
 }
 
-.card-content {
+.category-card-content {
   padding: 10px;
   color: black;
   flex-grow: 1;
 }
 
-.product-title {
-  font-size: 15px;
+.category-product-title {
+  font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.product-detail p {
+.category-description p {
   margin-bottom: 20px;
   text-align: center;
   margin-bottom: 50px;
+  font-size: 14px;
 }
 
 span {
@@ -135,15 +149,39 @@ span {
   align-items: center;
   justify-content: space-around;
 }
-.product-price {
-  font-size: 28px;
+.category-product-price {
+  font-size: 24px;
   align-items: center;
   font-weight: bold;
-  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
   color: black;
 }
-
-.button-container-cart {
+.category-button-container-cart {
   display: flex;
-  gap: 180px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+.cart {
+  display: flex;
+}
+.category-button-container-cart button {
+  background-color: #007bff;
+  height: 40px;
+}
+.category-button-container-wishlist {
+  align-items: center;
+  display: flex;
+  justify-content: right;
+  flex-direction: row-reverse;
+}
+.heart {
+  display: flex;
+}
+.category-add-to-wishlist-button button {
+  display: flex;
+  align-items: center;
+  height: 40px;
 }

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Category.css";
+import "./CategoriesPage.css";
 
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
+//
 const Category = () => {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +40,6 @@ const Category = () => {
 
   const handleShowLess = () => {
     setShowModal(false);
-    currentProduct(null);
   };
 
   return (
@@ -50,17 +50,17 @@ const Category = () => {
       {category && (
         <h1>{category.charAt(0).toUpperCase() + category.slice(1)} Products</h1>
       )}
-      <div className="product-list">
+      <div className="category-description">
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product.id} className="card">
-              <div className="card-content">
-                <h2 className="product-title">{product.title}</h2>
+            <div key={product.id} className="category-card">
+              <div className="category-card-content">
+                <h2 className="category-product-title">{product.title}</h2>
               </div>
               <img
                 src={product.image}
                 alt={product.title}
-                className="product-image"
+                className="category-product-image"
               />
 
               <p>
@@ -71,9 +71,9 @@ const Category = () => {
                     e.preventDefault();
                     handleReadMore(product);
                   }}
-                  className="read-more-link"
+                  className="category-read-more-link"
                 >
-                  Read More....
+                  ..Read More....
                 </a>
               </p>
             </div>
@@ -83,34 +83,58 @@ const Category = () => {
         )}
       </div>
       {showModal && currentProduct && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2 className="modal-title">{currentProduct.title}</h2>
-            <p className="product-price">${currentProduct.price}</p>
+        <div className="category-modal">
+          <div className="category-modal-content">
+            <h2 className="category-modal-title">{currentProduct.title}</h2>
             <span>
               <img src={currentProduct.image} alt={currentProduct.title} />
-              <button className="buy-now-button">Buy Now</button>
+              <p className="category-product-price">
+                ${currentProduct.price}
+                <button className="category-buy-now-button">Buy Now</button>
+              </p>
             </span>
-            {currentProduct.description}
-            <a href="#" onClick={handleShowLess}>
-              ....Read Less
-            </a>
-
-            <div className="rating-container">
+            <p className="category-modal-description">
+              {currentProduct.description}
+              <a
+                href="#"
+                onClick={handleShowLess}
+                className="category-read-less-link"
+              >
+                ....Read Less....
+              </a>
+            </p>
+            <div className="category-rating-container">
               <Box sx={{ "& > legend": { mt: 2 } }}>
                 <Typography component="legend">Product Rating</Typography>
                 <Rating
-                  name="read-only"
                   value={currentProduct.rating.rate}
-                  size="large"
+                  name="read-only"
+                  size="medium"
                   readOnly
                 />
               </Box>
             </div>
-
-            <div className="button-container-cart">
-              <button className="add-to-cart-button">Add to Cart</button>
-            </div>
+            <span className="bottom-btn">
+              <div className="category-button-container-cart">
+                <span style={{ color: "#e3a92f" }} className="cart">
+                  <button className="category-add-to-cart-button">
+                    <i
+                      class="fas fa-shopping-cart"
+                      style={{ color: "#e3a92f" }}
+                    ></i>
+                    Add to cart
+                  </button>
+                </span>
+              </div>
+              <div className="category-button-container-wishlist">
+                <span className="heart">
+                  <button className="category-add-to-wishlist-button">
+                    <i class="fas fa-heart" style={{ color: "#7f072f" }}></i>
+                    Add to Wishlist
+                  </button>
+                </span>
+              </div>
+            </span>
           </div>
         </div>
       )}
