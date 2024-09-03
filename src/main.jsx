@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import App from "./App.jsx";
+import "./index.css";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+import { BrowserRouter } from "react-router-dom";
+
+// ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter forceRefresh={true}>
     <App />
-  </StrictMode>,
-)
+  </BrowserRouter>
+);
