@@ -1,16 +1,18 @@
+html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #f2b85e;
+  width: 100%;
 }
 footer {
   position: sticky;
 }
-.product-details-page {
+/* .product-details-page {
   height: 100vh;
   overflow-y: hidden;
-}
+} */
 .montez-regular {
   font-family: "Montez", cursive;
   font-weight: 400;

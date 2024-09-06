@@ -114,9 +114,9 @@ const Category = () => {
                 />
               </Box>
             </div>
-            <span className="bottom-btn">
+            <span className="bottom-add-btn">
               <div className="category-button-container-cart">
-                <span style={{ color: "#e3a92f" }} className="cart">
+                <span className="cart">
                   <button className="category-add-to-cart-button">
                     <i
                       class="fas fa-shopping-cart"
@@ -127,7 +127,7 @@ const Category = () => {
                 </span>
               </div>
               <div className="category-button-container-wishlist">
-                <span className="heart">
+                <span className="wishlist">
                   <button className="category-add-to-wishlist-button">
                     <i class="fas fa-heart" style={{ color: "#7f072f" }}></i>
                     Add to Wishlist

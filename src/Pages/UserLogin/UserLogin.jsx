@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UserLogin.css";
+import { RemoveScrollBar } from "react-remove-scroll-bar";
 
 const UserLogin = () => {
   const [username, setUsername] = useState("");
@@ -10,7 +11,9 @@ const UserLogin = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
-
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -43,7 +46,16 @@ const UserLogin = () => {
   return (
     <div className="user-image-container">
       <div className="user-login-container">
-        <h2>User Login</h2>
+        <h2
+          style={{
+            mt: "150px",
+            color: "#C2181A",
+            fontWeight: "500",
+            fontSize: "20px",
+          }}
+        >
+          <b>Welcome Back! Please Login!</b>
+        </h2>
         <form className="user-login-form" onSubmit={handleLogin}>
           <div className="user-form-group">
             <label>Username: </label>
@@ -71,7 +83,11 @@ const UserLogin = () => {
 
           <p className="user-sign-up">
             No Account?
-            <a href="/sign-up" id="sign-up-hover">
+            <a
+              href="/sign-up"
+              onClick={() => handleNavigation("/sign-up")}
+              id="sign-up-hover"
+            >
               <span>Sign up?</span>
             </a>
           </p>
@@ -105,6 +121,7 @@ const UserLogin = () => {
           </div>
         </div>
       )}
+      <RemoveScrollBar />
     </div>
   );
 };

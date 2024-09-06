@@ -164,12 +164,10 @@ span {
   align-items: center;
   justify-content: left;
 }
-.cart {
-  display: flex;
-}
+
 .category-button-container-cart button {
   background-color: #007bff;
-  height: 40px;
+  height: 35px;
 }
 .category-button-container-wishlist {
   align-items: center;
@@ -177,11 +175,9 @@ span {
   justify-content: right;
   flex-direction: row-reverse;
 }
-.heart {
-  display: flex;
-}
-.category-add-to-wishlist-button button {
+.category-button-container-wishlist button {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 35px;
+  background-color: #007bff;
 }

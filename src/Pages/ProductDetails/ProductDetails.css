@@ -2,20 +2,21 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
-  overflow-x: hidden;
+  /* height: 100vh;
+  overflow-x: hidden; */
   font-family: Montserrat, sans-serif;
 }
-.details-back-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 10px;
-  left: 10px;
+.details-back-btn button {
   position: absolute;
   width: 65px;
+  display: flex;
+  align-items: center;
 }
-.product-details-page {
-  height: 100vh;
-  overflow-y: hidden;
+/* .product-details-page {
+  height: 100vh; */
+/* overflow-y: hidden; */
+/* } */
+button:hover {
+  color: #007bff;
+  border: 1px solid #007bff;
 }
