@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getProducts, getCategories } from "../../config/api.js";
 import "./Navbar.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
+import cartContext from "../../context/cartContext.jsx";
 
 const Navbar = () => {
+  const { cartItems, toggleCart } = useContext(cartContext);
+  const cartQuantity = cartItems.length;
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -83,15 +86,11 @@ const Navbar = () => {
                 Sign Up
               </button>
             </li>
-            <li
-              className="shopping-cart"
-              onClick={() => handleNavigation("/shopping-cart")}
-            >
-              <i
-                className="fas fa-cart-shopping fa-2x"
-                onClick={() => handleNavigation("/")}
-              >
-                <sup>{"3"}</sup>
+            <li className="shopping-cart">
+              <i className="fas fa-cart-shopping fa-2x" onClick={toggleCart}>
+                {cartQuantity >= 1 && (
+                  <span className="badge">{cartQuantity}</span>
+                )}
               </i>
             </li>
           </ul>

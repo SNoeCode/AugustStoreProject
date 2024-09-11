@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./SearchBar.css";
 const SearchBar = () => {
   const [data, setData] = useState([]);
@@ -9,6 +9,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
@@ -50,12 +51,11 @@ const SearchBar = () => {
             placeholder="Search for products..."
             value={searchTerm}
             onChange={(e) => handleFilter(e.target.value)}
-            onClick={(e) => handleClearSearch}
+            // onClick={<Navigate to="/product-details" replace={true} />}
           />
 
           {isDropdownVisible && (
             <div className="search-dropdown">
-              X
               {filteredData.map((product) => (
                 <div
                   key={product.id}

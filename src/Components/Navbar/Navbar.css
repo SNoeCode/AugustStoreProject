@@ -167,6 +167,14 @@ li {
   list-style: none;
   justify-content: space-between;
   color: white;
+  /* position: absolute; */
+  /* left: 1000px; */
+}
+.badge {
+  font-size: 8px;
+  display: block;
+  /* align-items: center;
+  justify-content: space-evenly; */
 }
 .fa-cart-shopping {
   color: #cd74a0;

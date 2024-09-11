@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+// import CartContext from "../../Config/context";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ProductDetails.css";
-import { getDetails } from "../../Config/api";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -12,6 +13,9 @@ import Typography from "@mui/material/Typography";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import backgroundImage from "../../Image/black-white.png";
 
+// const ProductList = () => {
+//   const { dispatch } = useContext(CartContext);
+// };
 const ProductDetails = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
@@ -65,7 +69,7 @@ const ProductDetails = () => {
             flexGrow: 1,
             overflowY: "auto",
             textAlign: "center",
-            //  mt: "10px",
+            mt: "10px",
           }}
         >
           <Typography
@@ -81,7 +85,11 @@ const ProductDetails = () => {
           </Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: "center", mt: "30px" }}>
-          <Button sx={{ display: "flex" }} size="small">
+          <Button
+            // onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}
+            sx={{ display: "flex" }}
+            size="small"
+          >
             Add To cart
           </Button>
           <Button size="small">Buy Now</Button>

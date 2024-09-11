@@ -1,15 +1,17 @@
+html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* display: block; */
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-  height: 100%;
 }
 
 .home-page {
+  z-index: 0;
   height: 100%;
+  object-fit: fill;
+  object-fit: cover;
   background-image: url("../../../Images/wp7001122.jpg");
   overflow: hidden;
   background-attachment: fixed;
@@ -53,27 +55,17 @@ body {
   justify-content: center;
   padding: 20px;
   gap: 5px;
-  /* overflow: hidden; */
-  /* background-image: url("../../../Images/wp7001122.jpg"); */
-  /* background-repeat: repeat; */
-  /* background-size: contain; */
-  /* height: 10%; */
+
   padding-top: 45px;
   width: 100vw;
-  /* background-position: center; */
-  /* min-height: 100vh; */
-  /* background-clip: fixed; */
-  /* flex-direction: column; */
 }
 
 .card {
   background: rgba(0, 0, 0, 0.7);
-  height: 250px;
+  height: 300px;
   justify-content: center;
-  /* background-color: rgba(0, 0, 0, 0.3); */
   width: 200px;
   border: 2px solid #c7161c;
-
   align-items: center;
   padding: 10px;
   display: flex;
@@ -86,56 +78,30 @@ body {
   align-items: center;
   justify-content: center;
   max-height: 70px;
-  /* background: cover; */
   width: 100px;
-  /* object-fit: contain; */
 }
 
 .card h1 {
   text-align: center;
   display: flex;
   justify-content: center;
-  font-size: 12px;
-  /* margin-top: 10px; */
-  /* margin-bottom: 15px; */
-  /* margin: 30px 15px; */
-}
-h1 {
   color: #fce276;
-  /* color: #7f072f; */
+  font-size: 12px;
 }
+
 .card h2 {
   font-size: 16px;
   margin: 10px 0;
-
   color: #99fb98;
   margin-bottom: 1px;
   display: flex;
 }
-
-/* .more-details-button:hover {
-  background-color: #333;
-} */
-/* .button-1 {
-  background-color: transparent;
-  border: 3px solid #e73ee4;
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  color: #cd74a0;
-  font-size: 10px;
-  font-weight: 500;
-}
-.button-1:hover {
-  box-shadow: 0 0 10px 0 #fce276 inset, 0 0 20px 2px #fce276;
-  cursor: pointer;
-  border: 3px solid #fce276;
-} */
 .rating-container {
   text-align: center;
-
+  background: rgba(255, 255, 255, 0.3);
+  height: 25%;
   display: flex;
   align-items: center;
-  margin-bottom: -0px;
 }
 
 .fas fa-cart-plus {
@@ -151,4 +117,9 @@ h1 {
 .button-1:hover {
   background-color: white;
   color: 007BFF;
+}
+.btn {
+  background-color: white;
+  display: flex;
+  margin: 15px 0;
 }

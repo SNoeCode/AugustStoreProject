@@ -15,11 +15,16 @@ body {
   position: fixed;
   bottom: 90px;
 }
-.product-details-page {
-  height: 100vh;
-  overflow-y: hidden;
-}
+/* .product-details-page { */
+/* height: 100vh; */
+/* overflow-y: hidden; */
+/* } */
 /* .user-image-page {
   height: 100vh;
   overflow-y: hidden;
 } */
+@media (max-width: 768px) {
+  .container {
+    font-size: 14px;
+  }
+}

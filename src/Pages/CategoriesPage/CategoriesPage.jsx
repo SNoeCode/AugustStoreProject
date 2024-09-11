@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./CategoriesPage.css";
-
+// import { CartContext } from "../../Config/context";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -116,8 +116,13 @@ const Category = () => {
             </div>
             <span className="bottom-add-btn">
               <div className="category-button-container-cart">
-                <span className="cart">
-                  <button className="category-add-to-cart-button">
+                <span className="span-cart">
+                  <button
+                    className="category-add-to-cart-button"
+                    // onClick={() =>
+                    //   dispatch({ type: "ADD_TO_CART", payload: products })
+                    // }
+                  >
                     <i
                       class="fas fa-shopping-cart"
                       style={{ color: "#e3a92f" }}
